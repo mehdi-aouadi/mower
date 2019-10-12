@@ -5,6 +5,7 @@ import com.blablacar.base.Move;
 import com.blablacar.base.Orientation;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,7 @@ public class Mower extends Observable {
   /**
    * A queue of instruction to be executed by the mower
    */
+  @Setter
   private Queue<Move> moves;
 
   /**
