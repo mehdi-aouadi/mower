@@ -9,9 +9,7 @@ import lombok.ToString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Observable;
-import java.util.Queue;
-import java.util.UUID;
+import java.util.*;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -51,7 +49,7 @@ public class Mower extends Observable {
    * @param cell        the mower initial {@link Cell}
    * @param orientation the mower {@link Orientation}
    */
-  public Mower(UUID id, Cell cell, Orientation orientation) {
+  public Mower(UUID id, Cell cell, Orientation orientation, Move... moves) {
     super();
     checkArgument(!cell.isLocked(),
         "Error when creating a new Mower at position X:" +
@@ -63,6 +61,7 @@ public class Mower extends Observable {
     this.id = id;
     this.orientation = orientation;
     this.cell = cell;
+    this.moves = new LinkedList<>(Arrays.asList(moves));
 
     //The initial position of the mower is locked
     this.cell.lock();

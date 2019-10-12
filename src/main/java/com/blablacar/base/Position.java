@@ -9,7 +9,6 @@ import lombok.ToString;
  *
  * @author Mehdi AOUADI
  */
-@ToString
 @EqualsAndHashCode
 @Getter
 public class Position {
