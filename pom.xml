@@ -35,6 +35,9 @@
     <maven.site.plugin>3.7.1</maven.site.plugin>
     <maven.javadoc.plugin>3.1.0</maven.javadoc.plugin>
     <junit.version>4.11</junit.version>
+    <logback.version>1.2.3</logback.version>
+    <org.projectlombok.version>1.18.2</org.projectlombok.version>
+    <com.google.guava.version>27.1-jre</com.google.guava.version>
   </properties>
 
   <dependencies>
@@ -43,6 +46,22 @@
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${org.projectlombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${com.google.guava.version}</version>
     </dependency>
   </dependencies>
 
