@@ -35,6 +35,7 @@
     <maven.site.plugin>3.7.1</maven.site.plugin>
     <maven.javadoc.plugin>3.1.0</maven.javadoc.plugin>
     <junit.version>4.11</junit.version>
+    <junitparams.version>1.0.2</junitparams.version>
     <logback.version>1.2.3</logback.version>
     <org.projectlombok.version>1.18.2</org.projectlombok.version>
     <com.google.guava.version>27.1-jre</com.google.guava.version>
@@ -45,6 +46,12 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>pl.pragmatists</groupId>
+      <artifactId>JUnitParams</artifactId>
+      <version>${junitparams.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

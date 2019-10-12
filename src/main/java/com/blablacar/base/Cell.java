@@ -12,8 +12,6 @@ import java.util.Map;
  *
  * @author Mehdi AOUADI
  */
-@ToString
-@EqualsAndHashCode
 public class Cell {
 
   /**
