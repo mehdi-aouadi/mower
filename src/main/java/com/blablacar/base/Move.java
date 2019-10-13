@@ -33,8 +33,8 @@ public enum Move {
   /**
    * Execute the mower move
    *
-   * @param current
-   * @return
+   * @param current The current {@link Mower}
+   *
    */
   public abstract void move(Mower current);
 }

@@ -78,8 +78,8 @@ public class Cell {
   /**
    * Put the next neighbor Cell by Orientation
    *
-   * @param orientation
-   * @param cell
+   * @param orientation the orientation where to put the next cell
+   * @param cell the neighbor cell in the orientation
    */
   public void nextCell(final Orientation orientation, final Cell cell) {
     this.neighbors.put(orientation, cell);
@@ -88,7 +88,7 @@ public class Cell {
   /**
    * Provides the next Cell
    *
-   * @param orientation
+   * @param orientation the orientation where to look for the next cell
    * @return the neighbor Cell on Orientation
    */
   public Cell nextCell(Orientation orientation) {

@@ -2,6 +2,7 @@ package com.blablacar.mower;
 
 import com.blablacar.base.Lawn;
 import com.blablacar.utils.GridPrinter;
+import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +16,7 @@ import java.util.Observer;
  *
  * @author Mehdi AOUADI
  */
+@Getter
 public class Commander implements Observer {
 
   private static Logger logger = LoggerFactory.getLogger(Commander.class);
@@ -30,8 +32,8 @@ public class Commander implements Observer {
   /**
    * The commander constructor
    *
-   * @param lawn
-   * @param mowers
+   * @param lawn The {@link Lawn} to mow
+   * @param mowers The list of {@link Mower} that will mow the {@link Lawn}
    */
   public Commander(Lawn lawn, List<Mower> mowers) {
     this.lawn = lawn;
@@ -47,33 +49,6 @@ public class Commander implements Observer {
       mower.addObserver(this);
       mower.start();
     }
-  }
-
-  /**
-   * Returns the mowers list
-   *
-   * @return
-   */
-  public List<Mower> getMowers() {
-    return mowers;
-  }
-
-  /**
-   * Sets the mowers list
-   *
-   * @param mowers
-   */
-  public void setMowers(List<Mower> mowers) {
-    this.mowers = mowers;
-  }
-
-  /**
-   * Return the lawn to mow
-   *
-   * @return
-   */
-  public Lawn getLawn() {
-    return lawn;
   }
 
   public void update(Observable o, Object arg) {

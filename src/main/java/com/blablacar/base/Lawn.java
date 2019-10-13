@@ -37,14 +37,14 @@ public class Lawn {
   /**
    * Lawn constructor
    *
-   * @param width
-   * @param heitgh
+   * @param width the lawn width
+   * @param height the lawn height
    */
-  public Lawn(int width, int heitgh) {
+  public Lawn(int width, int height) {
     super();
-    checkArgument(width > 0 && heitgh > 0, "Width and Height of the Lawn must be > 0");
+    checkArgument(width > 0 && height > 0, "Width and Height of the Lawn must be > 0");
     this.width = width;
-    this.height = heitgh;
+    this.height = height;
     this.grid = new Cell[this.width][this.height];
 
     for (int x = 0; x < this.width; x++) {

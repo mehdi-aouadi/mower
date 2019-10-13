@@ -49,6 +49,7 @@ public class Mower extends Observable {
    * @param id          a unique mower {@link UUID}
    * @param cell        the mower initial {@link Cell}
    * @param orientation the mower {@link Orientation}
+   * @param moves       the mower instrcutions. A {@link Queue} of {@link Move}
    */
   public Mower(UUID id, Cell cell, Orientation orientation, Queue<Move> moves) {
     super();
