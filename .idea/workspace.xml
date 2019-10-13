@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7ab011e0-d7b6-448b-b1c2-aa96c6591f71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blablacar/base/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blablacar/base/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blablacar/base/Lawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blablacar/base/Lawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blablacar/base/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blablacar/base/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blablacar/mower/Commander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blablacar/mower/Commander.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blablacar/mower/Mower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blablacar/mower/Mower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blablacar/parser/MowerText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blablacar/parser/MowerText.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="F:\workspace\mower\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/Apache/Maven/apache-maven-3.5.2" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1S619RtSG2vsWUPS5ygu78t1WEY" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/blablacar/parser" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.blablacar.cli" />
+      <recent name="com.blablacar.utils" />
+      <recent name="com.blablacar.mower" />
+      <recent name="com.blablacar.base" />
+      <recent name="com.blablacar.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\mower\src\main\java\com\blablacar\parser" />
+      <recent name="F:\workspace\mower\src\main\resources" />
+      <recent name="F:\workspace\mower\src\main\java\com\blablacar\base" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.GridPrinterTest">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GridPrinterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mower" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blablacar.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blablacar.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.blablacar.utils.GridPrinterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LawnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mower" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blablacar.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blablacar.base" />
+      <option name="MAIN_CLASS_NAME" value="com.blablacar.base.LawnTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MowerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mower" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blablacar.mower.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blablacar.mower" />
+      <option name="MAIN_CLASS_NAME" value="com.blablacar.mower.MowerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MowerTest.mowerTurningRightTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mower" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blablacar.mower.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blablacar.mower" />
+      <option name="MAIN_CLASS_NAME" value="com.blablacar.mower.MowerTest" />
+      <option name="METHOD_NAME" value="mowerTurningRightTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MowerTest.startTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mower" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blablacar.mower.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blablacar.mower" />
+      <option name="MAIN_CLASS_NAME" value="com.blablacar.mower.MowerTest" />
+      <option name="METHOD_NAME" value="startTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GridPrinterTest" />
+        <item itemvalue="JUnit.MowerTest" />
+        <item itemvalue="JUnit.MowerTest.startTest" />
+        <item itemvalue="JUnit.LawnTest" />
+        <item itemvalue="JUnit.MowerTest.mowerTurningRightTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ab011e0-d7b6-448b-b1c2-aa96c6591f71" name="Default Changelist" comment="" />
+      <created>1570869079374</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570869079374</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/blablacar/mower/MowerTest.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/blablacar/mower/MowerTest.java</url>
+          <line>75</line>
+          <properties class="com.blablacar.mower.MowerTest" method="startTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
