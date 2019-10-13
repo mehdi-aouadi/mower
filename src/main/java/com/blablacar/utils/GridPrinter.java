@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -29,11 +30,11 @@ public final class GridPrinter {
    * @param mowers the list of {@link Mower} to draw within the lawn
    * @return a {@link String} representation of the lawn
    */
-  public static String draw(Lawn lawn, Mower... mowers) {
+  public static String draw(Lawn lawn, List<Mower> mowers) {
 
     int width = lawn.getWidth();
     int height = lawn.getHeight();
-    boolean containsMowers = mowers.length > 0;
+    boolean containsMowers = !mowers.isEmpty();
 
     //The number of digits of the column number in order to add spaces
     int rowIndexMaxDigitNumber = String.valueOf(height - 1).length();
@@ -160,9 +161,9 @@ public final class GridPrinter {
    * @param mowers   the list of the present mowers
    * @return a {@link String} representation of the mower orientation
    */
-  private static String getMowerOrientation(Position position, Mower... mowers) {
+  private static String getMowerOrientation(Position position, List<Mower> mowers) {
     Optional<Mower> mower =
-        Arrays.stream(mowers).filter(e -> e.getCell().getPosition().equals(position)).findFirst();
+        mowers.stream().filter(e -> e.getCell().getPosition().equals(position)).findFirst();
     if (mower.isPresent()) {
       return mower.get().getOrientation().toString();
     } else {

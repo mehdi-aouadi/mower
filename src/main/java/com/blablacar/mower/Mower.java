@@ -41,7 +41,6 @@ public class Mower extends Observable {
   /**
    * A queue of instruction to be executed by the mower
    */
-  @Setter
   private Queue<Move> moves;
 
   /**
@@ -51,7 +50,7 @@ public class Mower extends Observable {
    * @param cell        the mower initial {@link Cell}
    * @param orientation the mower {@link Orientation}
    */
-  public Mower(UUID id, Cell cell, Orientation orientation, Move... moves) {
+  public Mower(UUID id, Cell cell, Orientation orientation, Queue<Move> moves) {
     super();
     checkArgument(!cell.isLocked(),
         "Error when creating a new Mower at position X:" +
@@ -63,7 +62,7 @@ public class Mower extends Observable {
     this.id = id;
     this.orientation = orientation;
     this.cell = cell;
-    this.moves = new LinkedList<>(Arrays.asList(moves));
+    this.moves = moves;
 
     //The initial position of the mower is locked
     this.cell.lock();
@@ -162,7 +161,12 @@ public class Mower extends Observable {
     } else {
       logger.warn("The mower {} doesn't have any instruction", this.toString());
     }
-    logger.debug("Stopping the mower {}", this.toString());
+    logger.debug("Stopping the mower {} at position X: {}, Y: {}, orientation: {}.",
+        this.id,
+        this.cell.getPosition().getColumn(),
+        this.cell.getPosition().getRow(),
+        this.orientation
+    );
   }
 
   /**
