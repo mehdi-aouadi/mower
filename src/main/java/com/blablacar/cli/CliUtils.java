@@ -47,6 +47,7 @@ public class CliUtils {
   public static CommandLine parseArguments(String[] args) throws ParseException {
     Options options = getOptions();
     CommandLineParser parser = new DefaultParser();
+    options.addOption("h", "help", false, "show help.");
     return parser.parse(options, args);
   }
 

@@ -9,21 +9,21 @@ import com.blablacar.mower.Mower;
  * @author Mehdi AOUADI
  */
 public enum Move {
-  D {
+  R {
     @Override
     public void move(Mower current) {
       current.turnRight();
     }
   },
 
-  G {
+  L {
     @Override
     public void move(Mower current) {
       current.turnLeft();
     }
   },
 
-  A {
+  F {
     @Override
     public void move(Mower current) {
       current.moveForward();

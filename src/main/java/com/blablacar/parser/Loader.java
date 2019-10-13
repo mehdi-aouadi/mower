@@ -46,7 +46,7 @@ public class Loader {
 
   public Commander fromLines(List<String> pLines) {
     checkArgument(pLines.size() > 2,
-        "Error when loading the Commander: Missing informations in the file. Expecting at least 3 lines.");
+        "Error when loading the Commander: Missing information in the file. Expecting at least 3 lines.");
     Iterator<String> lines = pLines.iterator();
     Parser<String, Lawn> lawnParser = new LawnParser();
     Parser<String, Queue<Move>> instructionParser = new InstructionsParser();
