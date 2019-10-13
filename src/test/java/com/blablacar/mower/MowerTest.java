@@ -85,11 +85,11 @@ public class MowerTest {
   public Object[][] parametersForStartTest() {
     return new Object[][] {
         {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.E).expected(0, 0, Orientation.E)},
-        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, Move.D).expected(0, 0, Orientation.S)},
-        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, Move.G).expected(0, 0, Orientation.N)},
-        {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.W, Move.G, Move.G, Move.G, Move.G).expected(0, 0,
+        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, Move.R).expected(0, 0, Orientation.S)},
+        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, Move.L).expected(0, 0, Orientation.N)},
+        {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.W, Move.L, Move.L, Move.L, Move.L).expected(0, 0,
             Orientation.W)},
-        {DataBuilder.lawn(5, 5).mower(2, 2, Orientation.W, Move.D, Move.A, Move.A, Move.G, Move.A, Move.A, Move.G, Move.A, Move.G, Move.A)
+        {DataBuilder.lawn(5, 5).mower(2, 2, Orientation.W, Move.R, Move.F, Move.F, Move.L, Move.F, Move.F, Move.L, Move.F, Move.L, Move.F)
             .expected(1, 3, Orientation.E)}};
   }
 

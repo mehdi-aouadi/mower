@@ -18,18 +18,18 @@ public class InstructionsParser implements Parser<String, Queue<Move>> {
 
     for (char instruction : source.toCharArray()) {
       switch (instruction) {
-        case 'G':
-          instructions.add(Move.G);
+        case 'L':
+          instructions.add(Move.L);
           break;
-        case 'D':
-          instructions.add(Move.D);
+        case 'R':
+          instructions.add(Move.R);
           break;
-        case 'A':
-          instructions.add(Move.A);
+        case 'F':
+          instructions.add(Move.F);
           break;
         default:
           throw new IllegalArgumentException(
-              "Error when parsing the instruction [Expecting: (G|D|A) n time'; Got : '" + source
+              "Error when parsing the instruction [Expecting: (L|R|F) n time'; Got : '" + source
                   + "']");
       }
     }

@@ -6,14 +6,14 @@ package com.blablacar.parser;
  * 
  * @author Mehdi AOUADI
  *
- * @param <I>
- * @param <O>
+ * @param <I> The input type
+ * @param <O> The output type
  */
 public interface Parser<I, O> {
 	/**
 	 * Parses the source I to O
-	 * @param source
-	 * @return
+	 * @param source the input
+	 * @return parsed input
 	 */
 	O parse(I source);
 }
