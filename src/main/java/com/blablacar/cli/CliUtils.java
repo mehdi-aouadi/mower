@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 @Slf4j
 public class CliUtils {
 
-  static final String FILE_PATH_LONG_OPTION = "log-file-path";
+  static final String FILE_PATH_LONG_OPTION = "file";
   static final String FILE_PATH_SHORT_OPTION = "f";
 
   /**

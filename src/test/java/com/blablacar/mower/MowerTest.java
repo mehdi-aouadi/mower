@@ -14,9 +14,7 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Observable;
-import java.util.Observer;
-import java.util.UUID;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -37,28 +35,28 @@ public class MowerTest {
   @Test
   @Parameters( {"N", "E", "S", "W"})
   public void mowerTurningRightTest(Orientation orientation) {
-    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation);
+    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation, new LinkedList<>());
     checkTurningRight(mower);
   }
 
   @Test
   @Parameters( {"N", "E", "S", "W"})
   public void mowerTurningLeftTest(Orientation orientation) {
-    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation);
+    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation, new LinkedList<>());
     checkTurningLeft(mower);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void mowerInitialCellLockedTest() {
     lawn.cellAt(3, 3).lock();
-    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation);
+    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation, new LinkedList<>());
     checkTurningRight(mower);
   }
 
   @Test
   public void mowerNextCellLocked() {
     lawn.cellAt(3, 3).nextCell(orientation).lock();
-    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation);
+    mower = new Mower(UUID.randomUUID(), lawn.cellAt(3, 3), orientation, new LinkedList<>());
     mower.moveForward();
     assertEquals(mower.getCell().getPosition(), lawn.cellAt(3, 3).getPosition());
     assertEquals(mower.getOrientation(), orientation);
@@ -67,7 +65,7 @@ public class MowerTest {
   @Test
   @Parameters( {"2,4,N", "4,2,E", "2,0,S", "0,2,W"})
   public void mowerNextCellOutOfTheLawn(int x, int y, Orientation orientation) {
-    mower = new Mower(UUID.randomUUID(), lawn.cellAt(x, y), orientation);
+    mower = new Mower(UUID.randomUUID(), lawn.cellAt(x, y), orientation, new LinkedList<>());
     mower.moveForward();
     assertEquals(mower.getCell().getPosition(), lawn.cellAt(x, y).getPosition());
     assertEquals(mower.getOrientation(), orientation);
@@ -76,20 +74,20 @@ public class MowerTest {
   @Test
   @Parameters
   public void startTest(Data data) {
-    data.mowers.start();
-    assertEquals(data.expectedOrientation, data.mowers.getOrientation());
-    assertEquals(data.expectedCell, data.mowers.getCell());
-    assertEquals(data.expectedCell, data.mowers.getCell());
+    data.mower.start();
+    assertEquals(data.expectedOrientation, data.mower.getOrientation());
+    assertEquals(data.expectedCell, data.mower.getCell());
+    assertEquals(data.expectedCell, data.mower.getCell());
   }
 
   public Object[][] parametersForStartTest() {
     return new Object[][] {
-        {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.E).expected(0, 0, Orientation.E)},
-        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, Move.R).expected(0, 0, Orientation.S)},
-        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, Move.L).expected(0, 0, Orientation.N)},
-        {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.W, Move.L, Move.L, Move.L, Move.L).expected(0, 0,
+        {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.E, new LinkedList<>()).expected(0, 0, Orientation.E)},
+        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, new LinkedList<>(Arrays.asList(Move.R))).expected(0, 0, Orientation.S)},
+        {DataBuilder.lawn(1, 1).mower(0, 0, Orientation.E, new LinkedList<>(Arrays.asList(Move.L))).expected(0, 0, Orientation.N)},
+        {DataBuilder.lawn(2, 2).mower(0, 0, Orientation.W, new LinkedList<>(Arrays.asList(Move.L, Move.L, Move.L, Move.L))).expected(0, 0,
             Orientation.W)},
-        {DataBuilder.lawn(5, 5).mower(2, 2, Orientation.W, Move.R, Move.F, Move.F, Move.L, Move.F, Move.F, Move.L, Move.F, Move.L, Move.F)
+        {DataBuilder.lawn(5, 5).mower(2, 2, Orientation.W, new LinkedList<>(Arrays.asList(Move.R, Move.F, Move.F, Move.L, Move.F, Move.F, Move.L, Move.F, Move.L, Move.F)))
             .expected(1, 3, Orientation.E)}};
   }
 
@@ -148,13 +146,13 @@ public class MowerTest {
   static class Data implements Observer {
 
     private Lawn lawn;
-    private Mower mowers;
+    private Mower mower;
     private Cell expectedCell;
     private Orientation expectedOrientation;
 
     @Override
     public void update(Observable o, Object arg) {
-      logger.debug("A move has been detected. Here is the Lawn state :\n {}", GridPrinter.draw(lawn, mowers));
+      logger.debug("A move has been detected. Here is the Lawn state :\n {}", GridPrinter.draw(lawn, Arrays.asList(mower)));
     }
 
     Cell on(final int x, final int y) {
@@ -171,9 +169,9 @@ public class MowerTest {
         return builder;
       }
 
-      DataBuilder mower(final int x, final int y, final Orientation o, final Move... moves) {
-        data.mowers = new Mower(UUID.randomUUID(), data.on(x, y), o, moves);
-        data.mowers.addObserver(data);
+      DataBuilder mower(final int x, final int y, final Orientation o, final Queue<Move> moves) {
+        data.mower = new Mower(UUID.randomUUID(), data.on(x, y), o, moves);
+        data.mower.addObserver(data);
         return this;
       }
 

@@ -49,14 +49,12 @@ public class Loader {
         "Error when loading the Commander: Missing information in the file. Expecting at least 3 lines.");
     Iterator<String> lines = pLines.iterator();
     Parser<String, Lawn> lawnParser = new LawnParser();
-    Parser<String, Queue<Move>> instructionParser = new InstructionsParser();
     Lawn lawn = lawnParser.parse(lines.next());
-    Parser<String, Mower> mowerParser = new MowerParser(lawn);
+    Parser<MowerText, Mower> mowerParser = new MowerParser(lawn);
     List<Mower> mowers = Lists.newArrayList();
     while (lines.hasNext()) {
-      Mower mower = mowerParser.parse(lines.next());
-      Queue<Move> moves = instructionParser.parse(lines.next());
-      mower.setMoves(moves);
+      MowerText mowerText = MowerText.builder().mowerPosition(lines.next()).mowerInstructions(lines.next()).build();
+      Mower mower = mowerParser.parse(mowerText);
       mowers.add(mower);
     }
     return new Commander(lawn, mowers);

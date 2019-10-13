@@ -1,6 +1,5 @@
 package com.blablacar.base;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 

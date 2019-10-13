@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,9 +29,9 @@ public class GridPrinterTest {
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {
     mowers = new ArrayList<Mower>();
-    Mower mower = new Mower(UUID.randomUUID(), new Cell(new Position(3, 5)), Orientation.N);
+    Mower mower = new Mower(UUID.randomUUID(), new Cell(new Position(3, 5)), Orientation.N, new LinkedList<>());
     mowers.add(mower);
-    mower = new Mower(UUID.randomUUID(), new Cell(new Position(1, 2)), Orientation.S);
+    mower = new Mower(UUID.randomUUID(), new Cell(new Position(1, 2)), Orientation.S, new LinkedList<>());
     mowers.add(mower);
   }
 
@@ -38,7 +39,7 @@ public class GridPrinterTest {
   @Parameters(value = {"5, 5", "11, 5", "5, 11", "11, 11", "101, 101"})
   public void gridPrinterTest(final int width, final int height) {
     lawn = new Lawn(width, height);
-    logger.info(GridPrinter.draw(lawn, mowers.toArray(new Mower[] {})));
+    logger.info(GridPrinter.draw(lawn, mowers));
   }
 
 }

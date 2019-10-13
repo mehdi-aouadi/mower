@@ -46,5 +46,16 @@ public class MowerApplication {
         }
         Commander commander = new Loader().fromFile(new File(applicationOptions.getFilePath()));
         commander.startMowing();
+        System.out.println("------------------------------------------");
+        System.out.println("Final mowers positions: ");
+        commander.getMowers().stream().forEach(mower -> {
+            System.out.println(mower.getCell().getPosition().getColumn() +
+                " " +
+                mower.getCell().getPosition().getRow() +
+                " " +
+                mower.getOrientation().toString()
+                );
+        });
+        System.out.println("------------------------------------------");
     }
 }

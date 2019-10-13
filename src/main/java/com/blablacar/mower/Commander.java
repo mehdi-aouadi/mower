@@ -36,7 +36,7 @@ public class Commander implements Observer {
   public Commander(Lawn lawn, List<Mower> mowers) {
     this.lawn = lawn;
     this.mowers = mowers;
-    logger.debug("Mowers set. Here is the initial state of the lawn : \n {}", GridPrinter.draw(lawn));
+    logger.debug("Mowers set. Here is the initial state of the lawn : \n {}", GridPrinter.draw(lawn, mowers));
   }
 
   /**
@@ -77,7 +77,7 @@ public class Commander implements Observer {
   }
 
   public void update(Observable o, Object arg) {
-    logger.debug("A move has been detected. Here is the lawn status : \n {}", GridPrinter.draw(lawn, mowers.toArray(new Mower[] {})));
+    logger.debug("A move has been detected. Here is the lawn status : \n {}", GridPrinter.draw(lawn, mowers));
   }
 
 }
