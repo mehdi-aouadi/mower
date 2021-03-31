@@ -38,7 +38,7 @@
     <junitparams.version>1.0.2</junitparams.version>
     <logback.version>1.2.3</logback.version>
     <org.projectlombok.version>1.18.2</org.projectlombok.version>
-    <com.google.guava.version>27.1-jre</com.google.guava.version>
+    <com.google.guava.version>29.0-jre</com.google.guava.version>
     <org.apache.cli.version>1.4</org.apache.cli.version>
   </properties>
 
